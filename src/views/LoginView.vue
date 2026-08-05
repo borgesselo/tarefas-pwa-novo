@@ -119,7 +119,7 @@ async function handleLogin() {
 .field input:focus {
   outline: none;
   border-color: #d53d7f;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 0 2px rgba(202, 16, 109, 0.808);
 }
 
 /* Botão */
@@ -142,7 +142,7 @@ button:active:not(:disabled) {
 
 /* Estado desabilitado */
 button:disabled {
-  background: #a5b4fc;
+  background: #fca5e9;
   cursor: not-allowed;
 }
 

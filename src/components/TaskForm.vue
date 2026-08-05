@@ -56,11 +56,6 @@
 import { ref, watch } from 'vue'
 import tasksApi from '../api/tasksApi.js'
 
-const isMobileDevice = ref(
-  /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent,
-  ),
-);
 
 const props = defineProps({
   editingTask: {
@@ -160,12 +155,12 @@ function handleCancel() {
 }
 
 .task-input:focus {
-  border-color: #4a90d9;
+  border-color: #d53d7f;
 }
 
 .task-button {
   padding: 12px 20px;
-  background-color: #4a90d9;
+  background-color: #d53d7f;
   color: white;
   border: none;
   border-radius: 8px;
@@ -175,7 +170,7 @@ function handleCancel() {
 }
 
 .task-button:hover:not(:disabled) {
-  background-color: #357abd;
+  background-color: #d53d7f;
 }
 
 .task-button:disabled {
@@ -223,8 +218,8 @@ function handleCancel() {
   gap: 6px;
   padding: 8px 14px;
   background: white;
-  border: 1.5px solid #4a90d9;
-  color: #4a90d9;
+  border: 1.5px solid #d53d7f;
+  color: #d53d7f;
   border-radius: 6px;
   font-size: 0.875rem;
   cursor: pointer;
@@ -232,7 +227,7 @@ function handleCancel() {
 }
 
 .image-label:hover:not(.disabled) {
-  background: #eaf2fb;
+  background: #fbeaf2;
 }
 
 .image-label.disabled {

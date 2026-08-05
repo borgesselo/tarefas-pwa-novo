@@ -66,7 +66,7 @@ defineEmits(['toggle', 'remove', 'edit'])
 .task-label input[type='checkbox'] {
   width: 20px;
   height: 20px;
-  accent-color: #4a90d9;
+  accent-color: #d53d7f;
 }
 
 .task-title {
@@ -100,7 +100,7 @@ defineEmits(['toggle', 'remove', 'edit'])
 .task-edit {
   background: none;
   border: none;
-  color: #4a90d9;
+  color: #d53d7f;
   cursor: pointer;
   font-size: 0.85rem;
   padding: 4px 8px;

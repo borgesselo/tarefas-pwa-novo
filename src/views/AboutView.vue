@@ -28,7 +28,7 @@
 
 .about h2 {
   font-size: 1.3rem;
-  color: #4a90d9;
+  color: #d94a9d;
   margin-bottom: 12px;
 }
 
