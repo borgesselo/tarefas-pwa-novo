@@ -1,6 +1,6 @@
 <template>
   <header class="app-header">
-    <h1>Meus gestor de Tarefas</h1>
+    <h1>Meus gestor de Tarefas!!!!</h1>
     <nav>
       <router-link to="/">Início</router-link>
       <router-link to="/about">Sobre</router-link>
@@ -17,7 +17,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
-import { useAuthStore } from '@/stores/auth';
+import { useAuthStore } from '../stores/auth';
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -34,13 +34,13 @@ function handleLogout() {
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
-  border-bottom: 2px solid #f0b1d2;
+  border-bottom: 2px solid #d53d7f;
   margin-bottom: 24px;
 }
 
 .app-header h1 {
   font-size: 1.4rem;
-  color: #d94a9b;
+  color: #d53d7f;
 }
 
 nav {
@@ -56,6 +56,6 @@ nav a {
 }
 
 nav a.router-link-active {
-  color: #f0b1d2;
+  color: #d53d7f;
 }
 </style>

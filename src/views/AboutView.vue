@@ -19,6 +19,8 @@
       <li>Workbox para gerenciamento de cache</li>
     </ul>
   </div>
+
+  
 </template>
 
 <style scoped>
@@ -28,7 +30,7 @@
 
 .about h2 {
   font-size: 1.3rem;
-  color: #d94a9d;
+  color: #d53d7f;
   margin-bottom: 12px;
 }
 

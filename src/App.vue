@@ -1,4 +1,5 @@
 <template>
+  <OfflineBanner />
   <AppHeader />
   <main>
     <router-view />
@@ -9,6 +10,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import AppHeader from './components/AppHeader.vue'
+import OfflineBanner from './components/OfflineBanner.vue'
 import NotificationPrompt from './components/NotificationPrompt.vue'
 import { useTasksStore } from './stores/tasks'
 import { useAuthStore } from './stores/auth'
@@ -38,7 +40,7 @@ onMounted(async () => {
   ) {
     navigator.serviceWorker.ready
       .then((reg) => authStore.subscribe(reg))
-      .catch(() => { })
+      .catch(() => {})
   }
 })
 
@@ -48,3 +50,8 @@ onUnmounted(() => {
   }
 })
 </script>
+<style scoped>
+main {
+  padding-bottom: 40px;
+}
+</style>
