@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import api from '../api/config'
 
-const VAPID_PUBLIC_KEY = import.meta.env.VITE_VAPID_PUBLIC_KEY //
+const VAPID_PUBLIC_KEY = import.meta.env.VITE_VAPID_PUBLIC_KEY // 
 
 function urlBase64ToUint8Array(base64String) {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
@@ -11,7 +11,7 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 export function usePushNotifications() {
-  const isSupported = ref('Notification' in window && 'PushManager' in window) //
+  const isSupported = ref('Notification' in window && 'PushManager' in window) // 
   const permission = ref(isSupported.value ? Notification.permission : 'denied')
 
   async function requestPermission() {
@@ -33,7 +33,7 @@ export function usePushNotifications() {
       }
 
       const subscription = await swRegistration.pushManager.subscribe({
-        userVisibleOnly: true, //
+        userVisibleOnly: true, // 
         applicationServerKey: urlBase64ToUint8Array(vapidKey),
       })
 
@@ -66,7 +66,7 @@ export function usePushNotifications() {
         data: { endpoint: subscription.endpoint },
       })
       await subscription.unsubscribe()
-      localStorage.removeItem('push_endpoint') //
+      localStorage.removeItem('push_endpoint') // 
     } catch (err) {
       console.error('[Push] unsubscribe failed:', err)
     }

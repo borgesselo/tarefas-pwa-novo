@@ -1,5 +1,4 @@
 <template>
-  <OfflineBanner />
   <AppHeader />
   <main>
     <router-view />
@@ -17,9 +16,10 @@ import { useAuthStore } from './stores/auth'
 const tasksStore = useTasksStore()
 const authStore = useAuthStore()
 
+// Re-fetch automático quando o usuário clica em uma notificação e foca o app
 function onSwMessage(event) {
   if (event.data?.type === 'PUSH_NOTIFICATION_CLICKED') {
-    tasksStore.fetchTasks() //
+    tasksStore.fetchTasks() // 
   }
 }
 
@@ -28,16 +28,17 @@ onMounted(async () => {
     navigator.serviceWorker.addEventListener('message', onSwMessage)
   }
 
+  // Se autenticado + permissão granted + sem endpoint local → re-subscribe silenciosamente
   if (
     authStore.isAuthenticated &&
     'serviceWorker' in navigator &&
     'Notification' in window &&
     Notification.permission === 'granted' &&
-    !localStorage.getItem('push_endpoint') //
+    !localStorage.getItem('push_endpoint') // 
   ) {
     navigator.serviceWorker.ready
       .then((reg) => authStore.subscribe(reg))
-      .catch(() => {})
+      .catch(() => { })
   }
 })
 
